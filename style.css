@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap');
+*{
+  margin: 0;
+  padding: 0 ;
+  box-sizing: border-box;
+  font-family: 'Chivo', sans-serif;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.home {
+  width:100%;
+  min-height:100vh;
+ background-size: cover;
+ display: flex;
+ align-items:center;
+ justify-content: start;
+ position:relative;
+ color:white;
+ text-transform: uppercase;
+ vertical-align: middle;
+}
+.left{
+  width: 650px;
+  /* min-height: 100hv; */
+  position: relative;
+  image-rendering: pixelated;
+}
+.left img{
+  width: 874px;
+  height:980px;
+  position:absolute;
+  margin-top: 0;
+  /* left: -100px; */
+}
+.right{
+  width: 750px;
+  min-height: 100px;
+  padding: 70px 0;
+  display:flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.right .top{
+  width: 600px;
+  font-weight:300;
+  image-rendering: auto;
+}
+.right .top p{
+  font-size: 48px;
+  text-align: right;
+  margin-bottom: 16px;
+}
+.right .top a{
+  display: block;
+  text-align: end;
+  font-size: 32px;
+  color : #ffc901;
+}
+.middle .img{
+  width: 300px;;
+}
+.bottom p{
+  font-size: 48px;
+}
+.bottom p span{
+  color: ffc901;
+}
+.home-footer{
+  position:absolute;
+  right:0;
+  bottom: 25px;
+}
+
+/* Navbar */
+
+header{
+  width: 100%;
+  padding: 16px 0; 
+  background-color: #725e15;
+  position:sticky;
+  top : 0;
+  z-index: 1;
+  text-transform:uppercase;
+}
+nav{
+  width:1200px;
+  height: auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 400;
+  color:white;
+  color:white;
+  
+  
+}
+nav .logo img{
+  margin-left: auto;
+  width: 300px; 
+  height: 120px;  
+}
+nav .logo {
+  margin-left:100px;
+  margin-right:100px;
+}
+
+ul
+{
+  display:contents;
+  align-items:first baseline;
+  text-align: justify;
+}
+.link{
+  padding: 20px;
+}
+.link:hover{
+  color:#ffc901
+}
+
+::-webkit-scrollbar{
+  width: 0;
+}
+html{
+  scroll-behavior:smooth;
+  scroll-snap-type: mandatory;
+}
