@@ -1,138 +1,115 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap');
 *{
-  margin: 0;
-  padding: 0 ;
-  box-sizing: border-box;
-  font-family: 'Chivo', sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Kumbh Sans', sans-serif;
 
+}
+.logo{
+    width:150px;
+    height:150px;
+}
+
+.navbar{
+    width:100%;
+    height:110px;
+    margin:auto;
+    background: orange;
+    padding:35px 0;
+    display:flex;
+    align-items: center;
+    position:fixed;
+    justify-content: space-between;
+    top:0;
+    z-index: 1000;
+
+}
+.navbar ul {
+    list-style: none;
+    display:flex;
+    padding-right: 50px;
+}
+
+.navbar ul li {
+    list-style:none;
+    display:inline-block;
+    margin:0 20px;
+    position:relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font:bold;
+    text-transform: uppercase;
+    float:right;
+}
+
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width:0;
+    background: black;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    transition:0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+}
+
+.content{
+    width:100%;
+    height:auto;
+    position: relative;
+    margin-top: 150px; 
+}
+.content img{
+    width:100%;
+    height:500px;
+}
+
+.content .btn{
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font:bold;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 12px 24px;
+    border-color: lightcyan;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container .btn:hover {
+    background-color: black;
+  }
+
+div  {
+    width:100%;
+    height: 300px;
+    background-color:bisque;
 }
 body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-}
-.home {
-  width:100%;
-  min-height:100vh;
- background-size: cover;
- display: flex;
- align-items:center;
- justify-content: start;
- position:relative;
- color:white;
- text-transform: uppercase;
- vertical-align: middle;
-}
-.left{
-  width: 650px;
-  /* min-height: 100hv; */
-  position: relative;
-  image-rendering: pixelated;
-}
-.left img{
-  width: 874px;
-  height:980px;
-  position:absolute;
-  margin-top: 0;
-  /* left: -100px; */
-}
-.right{
-  width: 750px;
-  min-height: 100px;
-  padding: 70px 0;
-  display:flex;
-  flex-direction:  column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-.right .top{
-  width: 600px;
-  font-weight:300;
-  image-rendering: auto;
-}
-.right .top p{
-  font-size: 48px;
-  text-align: right;
-  margin-bottom: 16px;
-}
-.right .top a{
-  display: block;
-  text-align: end;
-  font-size: 32px;
-  color : #ffc901;
-}
-.middle .img{
-  width: 300px;;
-}
-.bottom p{
-  font-size: 48px;
-}
-.bottom p span{
-  color: ffc901;
-}
-.home-footer{
-  position:absolute;
-  right:0;
-  bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto'
 }
 
-/* Navbar */
-
-header{
-  width: 100%;
-  padding: 16px 0; 
-  background-color: #725e15;
-  position:sticky;
-  top : 0;
-  z-index: 1;
-  text-transform:uppercase;
+.infor {
+    text-align: left;
+    max-width: 600px; 
+    margin: 0 auto;
+    padding: 20px; 
 }
-nav{
-  width:1200px;
-  height: auto;
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top: -10px;
-  font-size: 20px;
-  font-weight: 400;
-  color:white;
-  color:white;
-  
-  
-}
-nav .logo img{
-  margin-left: auto;
-  width: 300px; 
-  height: 120px;  
-}
-nav .logo {
-  margin-left:100px;
-  margin-right:100px;
-}
-
-ul
-{
-  display:contents;
-  align-items:first baseline;
-  text-align: justify;
-}
-.link{
-  padding: 20px;
-}
-.link:hover{
-  color:#ffc901
-}
-
-::-webkit-scrollbar{
-  width: 0;
-}
-html{
-  scroll-behavior:smooth;
-  scroll-snap-type: mandatory;
+.blank-line {
+    height: 20px;
 }
