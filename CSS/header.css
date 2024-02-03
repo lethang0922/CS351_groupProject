@@ -8,7 +8,6 @@
   justify-content: space-between; /* Align logo to the left and navigation to the right */
   align-items: center;
 }
-
 /* Style the header links */
 .header a {
   float: left;
@@ -64,26 +63,17 @@
     display: block;
   }
 }
-<<<<<<< HEAD
 
 @media screen and (max-width: 600px) {
   .header-right.responsive {position: relative;}
   .header-right.responsive .icon {
-=======
-@media screen and (max-width: 600px) {
-  .header-right.responsive {position: relative;}
-  .header-right.responsive a.icon {
->>>>>>> temp1
     position: absolute;
     right: 0;
     top: 0;
   }
   .header-right.responsive a {
-<<<<<<< HEAD
     float: none;
-=======
     float:right;
->>>>>>> temp1
     display: block;
     text-align: left;
   }
