@@ -65,15 +65,15 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header-right.responsive {position: relative;}
-  .header-right.responsive .icon {
+  .header-right .responsive {position: relative;}
+  .header.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
   .header-right.responsive a {
     float: none;
-    float:right;
+    float:left;
     display: block;
     text-align: left;
   }
