@@ -7,27 +7,6 @@
   font-family: 'Chivo', sans-serif;
 }
 
-.header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align:right;
-}
-
-.header a {
-  color: white;
-  text-decoration: none;
-}
-
-.header .header-right {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.header .header-right a {
-  margin: 0 15px;
-}
 /**/
 .first-block {
   position: relative;
@@ -59,7 +38,7 @@
 
 .first-block h2 {
   font-size: 35px;
-  margin-top: -150px;
+  margin-top: 0px;
 }
 
 .first-block .color-line {
@@ -76,7 +55,7 @@
 }
 
 .first-block p {
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 35px;
 }
 
@@ -125,12 +104,12 @@
 }
 
 .second-block h2 {
-  font-size: 30px;
+  font-size: 0px;
   margin-top: 5px;
 }
 
 .second-block p {
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 20px;
 }
 
@@ -181,12 +160,12 @@
 
 .third-block h2 {
   font-size: 35px;
-  margin-top: -150px;
+  margin-top: 0px;
 }
 
 
 .third-block p {
-  margin-top: 30px;
+  margin-top: 0px;
   font-size: 20px;
 }
 
@@ -238,12 +217,12 @@
 
 .four-block h2 {
   font-size: 35px;
-  margin-top: -150px;
+  margin-top: 0px;
 }
 
 
 .four-block p {
-  margin-top: 30px;
+  margin-top: 0px;
   font-size: 20px;
 }
 
