@@ -1,7 +1,7 @@
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #c1850c;
+  background-color: #333;
   padding: 20px 10px;
   height: 100px;
   display: flex;
@@ -55,16 +55,22 @@
 
 /* Media query to show/hide elements based on screen size */
 @media screen and (max-width: 600px) {
-  .header-right {
-    display: none; /* Hide the regular navigation links for smaller screens */
+  .header-right a:not(:first-child) {display: none;}
+  .header-right a.icon {
+    float: right;
+    display: block;
   }
-
-  .menu-icon {
-    display: block; /* Show the menu icon for smaller screens */
+}
+@media screen and (max-width: 600px) {
+  .header-right.responsive {position: relative;}
+  .header-right.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
-
-  /* Show mobile menu on smaller screens */
-  .mobile-menu {
-    display: flex;
+  .header-right.responsive a {
+    float:right;
+    display: block;
+    text-align: left;
   }
 }
