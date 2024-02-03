@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ha'Matata Restaurant</title>
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../CSS/contact.css">
+  <script src="../JS/javascript.js"></script>
+  <script src="../JS/contact.js"></script>
+</head>
+<body>
+  <!-- Menubar -->
+  <div class="header">
+    <a href="./index.html" class="logo">
+      <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
+    </a>
+    <div class="header-right" id="myTopnav">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./location.html">Location</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./reservation.html">Reservation</a>
+      <a href="./contact.html" class="active">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h1>Contact Us</h1>
+    <p>Whether you have inquiries about our offerings, want to share feedback, or simply wish to engage in delightful conversations, we're here for you. Feel free to connect with us, and let's make every interaction memorable..</p>
+
+    <!-- Contact Form -->
+    <form action="#" method="post" class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="title">Name:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button class="custom-button" type="submit" onclick="showSuccessAlert()">SEND REQUEST</button>
+
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2024 HA'MATATA. STAY CONNECTED</p>
+  </div>
+</body>
+</html>
