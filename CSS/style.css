@@ -7,6 +7,10 @@
   font-family: 'Chivo', sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> temp1
 /**/
 .first-block {
   position: relative;
@@ -104,8 +108,13 @@
 }
 
 .second-block h2 {
+<<<<<<< HEAD
   font-size: 0px;
   margin-top: 5px;
+=======
+  font-size: 30px;
+  margin-top: 0px;
+>>>>>>> temp1
 }
 
 .second-block p {
@@ -222,8 +231,13 @@
 
 
 .four-block p {
+<<<<<<< HEAD
   margin-top: 0px;
   font-size: 20px;
+=======
+  margin-top: 30px;
+  font-size: 0px;
+>>>>>>> temp1
 }
 
 .four-block a.button {
