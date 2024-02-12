@@ -1,0 +1,68 @@
+.location-body{
+    padding: 10px;
+}
+.location {
+    display: flex;
+    align-items: center;
+}
+  /** The IMAGE LOCATION**/
+.img-location {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.img-location:hover img{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+  
+.info-location {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.img-location img {
+    max-width: 100%;
+    height: auto;
+}
+  
+.info-location h1, .info-location p, .info-location ul {
+     text-align: center;
+     padding-bottom: 10px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+}
+li{
+    margin: 10px;
+}
+
+.info-location a{
+    text-decoration: none;
+    color: black;
+}
+.info-location a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 60px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+}
+  
+.info-location a.button:hover {
+    background-color: white;
+    color: #c1850c;
+}
