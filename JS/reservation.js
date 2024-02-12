@@ -22,3 +22,13 @@ function validateReservation() {
   alert(`Reservation confirmed for ${name} and ${guests} guests at ${dateTime.toLocaleString()}`);
   form.submit();
 }
+
+//press Enter for Send Request button
+$(document).ready(function() {
+  $('#reservationForm input').keypress(function(event) {
+    if (event.which === 13) { // Check if the Enter key (key code 13) is pressed
+      event.preventDefault(); // Prevent default form submission behavior
+      $('#reservationForm').submit(); 
+    }
+  });
+});
