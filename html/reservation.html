@@ -46,6 +46,11 @@
         <input class="custom-input" type="number" placeholder="Number of Guests" required name="Guests" min="1">
         <input class="custom-input" type="datetime-local" placeholder="Date and Time" required name="date" value="2024-02-03T20:00" min="" step="3600">
         <input class="custom-input" type="text" placeholder="Special Requests" required name="Message">
+        <select class="custom-input" name="place" required>
+          <option value="" selected disabled hidden>Choose a Place</option>
+          <option value="Des Moines">Des Moines</option>
+          <option value="Seattle">Seattle</option>
+        </select>
       </div>
       <button class="custom-button" type="button" onclick="validateReservation()">SEND REQUEST</button>
     </form>

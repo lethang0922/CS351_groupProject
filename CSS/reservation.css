@@ -36,15 +36,15 @@ header a:hover {
 
 /* Custom styles for the contact section */
 .contact-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto; /* Center the section horizontally */
   padding: 20px;
-  text-align: center;
+  text-align:center;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 20px rgb(203, 88, 0);
   color: #333; /* Text color for the section */
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .custom-heading {
@@ -66,10 +66,12 @@ header a:hover {
 .custom-input {
   flex: 1;
   padding: 10px;
-  margin: 10px 5px; /* Adjusted margin for better spacing */
+  margin: 10px 5px; 
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: calc(50% - 10px); /* Responsive width for smaller screens */
+  width: calc(100% - 22px); /* Responsive width for smaller screens */
+  /* Adjusted height */
+  height: 40px;
 }
 
 .custom-button {
