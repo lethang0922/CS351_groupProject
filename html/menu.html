@@ -1,11 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ha'Matata Restaurant</title>
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../CSS/menu.css">
+  <script src="../JS/javascript.js"></script>
+  <script defer src="../JS/menu.js"></script>
+
+  <style>
+
+  </style>
 </head>
 <body>
+    <!-- Menubar -->
+    <div class="header">
+      <a href="./index.html" class="logo">
+        <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
+      </a>
+      <div class="header-right" id="myTopnav">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./location.html">Location</a>
+        <a href="./menu.html">Menu</a>
+        <a href="./reservation.html">Reservation</a>
+        <a href="./contact.html" class="active">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+ 
+
+
+    <!-- Menu -->
+    <div class="menu-container">
+        <!-- Appetizers -->
+        <div class="menu-section">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+              <div class="menu-item" onclick="addToOrder('Buffalo Wings', 12.00)">
+              <h3>Buffalo Wings ............. $12.00</h3>
+              <p>Spicy chicken wings served with blue cheese dressing.</p>            
+            </div>
+          
+            <div class="menu-item">
+              <h3>Mozzarella Sticks ............. $9.00</h3>
+              <p>Golden-fried mozzarella sticks served with marinara sauce.</p>
+            </div>
+          
+            <div class="menu-item">
+              <h3>Spinach Artichoke Dip ............. $10.50</h3>
+              <p>Creamy spinach and artichoke dip served with tortilla chips.</p>
+
+            </div>
+          
+            <div class="menu-item">
+              <h3>Shrimp Cocktail ............. $14.00</h3>
+              <p>Chilled jumbo shrimp served with cocktail sauce.</p>
+            </div>
+          
+            <div class="menu-item">
+              <h3>Loaded Potato Skins ............. $11.50</h3>
+              <p>Crispy potato skins filled with bacon, cheese, and sour cream.</p>
+            </div>
+          </div>
+
+
+          <!-- Entrees -->
+          <div class="menu-section">
+            <h2>Entrees</h2>
+          
+            <div class="menu-item">
+                <h3>Seared Ahi Tuna ............. $14.00</h3>
+                <p>Description of Seared Ahi Tuna.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Coconut Prawns ............. $14.45</h3>
+                <p>Delicious coconut-breaded prawns served with a flavorful dipping sauce.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Chicken Tenders ............. $14.45</h3>
+                <p>Crispy and tender chicken tenders served with your choice of dipping sauce.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Calamari ............. $10.95</h3>
+                <p>Lightly battered and fried calamari rings served with marinara sauce.</p>
+            </div>
+        
+            <div class="menu-item">
+                <h3>California Chicken Salad ............. $15.75</h3>
+                <p>Fresh salad with grilled chicken, avocado, tomatoes, and a tangy dressing.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Taco Salad ............. $15.75</h3>
+                <p>Crunchy taco salad with seasoned ground beef, lettuce, cheese, and salsa.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Pulled Pork Sandwich ............. $14.75</h3>
+                <p>Savory pulled pork piled high on a soft bun, served with coleslaw.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Fish & Chips ............. $17.50</h3>
+                <p>Classic fish and chips with crispy battered fish and seasoned fries.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Seafood Sauté ............. $19.25</h3>
+                <p>Assorted seafood sautéed to perfection in a savory sauce.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Classic Burger ............. $12.50</h3>
+                <p>Juicy beef patty with classic toppings served on a toasted bun.</p>
+            </div>
+          
+            <div class="menu-item">
+                <h3>Rib Eye Steak ............. $25.00</h3>
+                <p>Juicy rib-eye steak seasoned and grilled to perfection, served with your choice of sides.</p>
+            </div>
+          
+        </div>
+
+        <!-- Chef's Special -->
+        <div class="menu-section">
+            <h2>Chef's Special</h2>
+            <div class="menu-item">
+              <h3>Steakhouse Ribeye ............. $22.99</h3>
+              <p>Juicy ribeye steak cooked to perfection.</p>
+            </div>
+            <div class="menu-item">
+              <h3>OMG! Burger ............. $16.75</h3>
+              <p>Two patties, each topped with swiss and cheddar cheese, bacon, crisp lettuce, tomatoes, red onion, and mayo.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Fresh Northwest Salmon ............. $23.99</h3>
+              <p>Flame-broiled NW salmon, brushed with lemon dill butter. Served with garlic mashed potatoes and market veggies.</p>
+            </div>
+            <div class="menu-item">
+              <h3>BILLY'S Prime Rib* ............. $22.99</h3>
+              <p>Slow-roasted 28-day aged marbled prime rib.</p>
+            </div>
+  
+        <!-- Desserts -->
+        <div class="menu-section">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+              <h3>Peanut Butter Pie ............. $7.75</h3>
+            </div>
+            <div class="menu-item">
+              <h3>Oreo Brownie Sundae ............. $7.75</h3>
+            </div>
+            <div class="menu-item">
+              <h3>Hot Apple Crisp ............. $6.50</h3>
+            </div>
+            <div class="menu-item">
+              <h3>A la mode ............. $7.00</h3>
+            </div>
+            <div class="menu-item">
+              <h3>Hot Fudge Sundae ............. $4.95</h3>
+            </div>
+            <div class="menu-item">
+              <h3>NY Cheesecake w/Strawberry Puree ............. $6.50</h3>
+            </div>
+            <div class="menu-item">
+              <h3>Lemoncello Cake ............. $8.50</h3>
+            </div>
+        </div>
+        <!-- Drink -->
+        <div class="menu-section">
+            <h2>Drink</h2>
+          
+            <!-- Smoothie & Juice -->
+            <div class="smoothie-juice">
+              <h3>Smoothie & Juice</h3>
+              <p>Strawberry<br>Blackberry<br>Redberry<br>Oreo<br>Strawberry Lemonade<br>Banana<br>Lime<br>Orange</p>
+            </div>
+          
+            <!-- Wine -->
+            <div class="wine">
+              <h3>Wine</h3>
+              <p>Chardonnay<br>Pinot Grigio<br>Cabernet<br>Merlot</p>
+              <p>St Michelle Reisling<br>Kendall Jackson Chardonnay<br>St Michelle Cabernet<br>St Michelle Cabernet</p>
+            </div>
+          
+            <!-- Beer -->
+            <div class="beer">
+              <h3>Beer</h3>
+              <p>Coors Light<br>Guinness<br>Mack & Jack<br>Widmer Hefeweizen<br>Angry Orchard<br>Blue Moon<br>Mannys<br>Modello</p>
+            </div>
+          
+            <!-- Soft Drink -->
+            <div class="soft-drink">
+              <h3>Soft Drink</h3>
+              <p>Coke<br>Sprite<br>Mountain Dew<br>Fanta<br>Dr Pepper<br>Diet Coke<br>Root Beer<br>Mirinda</p>
+            </div>
+          </div>
+          <div id="order-status"></div>
+
+            
     
-</body>
+      </div>
+  
+      <!-- Footer -->
+      <div class="footer">
+        <p>© 2024 HA'MATATA. STAY CONNECTED</p>
+    </div>
+  </body>
 </html>
