@@ -40,7 +40,7 @@
     <p>Visit our vibrant bar-dining restaurant for a delightful experience. We've got you covered.</p>
     <p>Indulge in our curated selection of drinks and bites, where each item is crafted to elevate your bar-dining experience, balancing flavors and presentation.</p>
     <p class="custom-paragraph"><b>Reserve</b> a spot, inquire about our daily specials, or simply drop us a message:</p>
-    <form id="reservationForm" action="/action_page.php" target="_blank">
+    <form id="reservationForm" action="reservation.php" method="post">
       <div class="input-container">
         <input class="custom-input" type="text" placeholder="Name" required name="Name">
         <input class="custom-input" type="number" placeholder="Number of Guests" required name="Guests" min="1">
@@ -52,7 +52,7 @@
           <option value="Seattle">Seattle</option>
         </select>
       </div>
-      <button class="custom-button" type="button" onclick="validateReservation()">SEND REQUEST</button>
+      <button class="custom-button" type="submit" >SEND REQUEST</button>
     </form>
   </section>
   
