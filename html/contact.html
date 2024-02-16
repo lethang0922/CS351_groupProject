@@ -35,28 +35,38 @@
 
   <!-- Contact -->
   <section class="contact">
-    <h1>Contact Us</h1>
+    <div class="contact-container">
+    <h1 class="custom-heading">CONTACT US</h1>
     <p>Whether you have inquiries about our offerings, want to share feedback, or simply wish to engage in delightful conversations, we're here for you. Feel free to connect with us, and let's make every interaction memorable..</p>
 
     <!-- Contact Form -->
     <form id="contactForm" action="contact.php" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      <div class="input-container">
+        <div class="input-row">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-row">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="input-row">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-row">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required style="height: 150px;"></textarea>
+        </div>
+      </div>
       <button class="custom-button" type="submit">SEND REQUEST</button>
-
     </form>
+    
   </section>
 
   <!-- Footer -->
   <div class="footer">
-    <p>Â© 2024 HA'MATATA. STAY CONNECTED</p>
+    <p> © 2024 HA'MATATA. STAY CONNECTED</p>
   </div>
 </body>
 </html>
