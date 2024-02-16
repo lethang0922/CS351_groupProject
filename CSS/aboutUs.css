@@ -1,7 +1,16 @@
+/* Reset or Normalize CSS */
+/* Add your reset or normalize CSS here */
+
 /* Custom CSS for About Us page */
 .about-us-container {
+  display: -webkit-box; /* For iOS and Safari */
+  display: -ms-flexbox; /* For Internet Explorer */
   display: flex;
+  -webkit-box-pack: justify; /* For iOS and Safari */
+  -ms-flex-pack: justify; /* For Internet Explorer */
   justify-content: space-between;
+  -webkit-box-align: center; /* For iOS and Safari */
+  -ms-flex-align: center; /* For Internet Explorer */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -9,6 +18,8 @@
 }
 
 .about-text {
+  -webkit-box-flex: 1; /* For iOS and Safari */
+  -ms-flex: 1; /* For Internet Explorer */
   flex: 1;
   padding-right: 50px;
   font-size: 20px;
@@ -25,6 +36,8 @@
 }
 
 .about-image {
+  -webkit-box-flex: 1; /* For iOS and Safari */
+  -ms-flex: 1; /* For Internet Explorer */
   flex: 1;
   text-align: center;
 }
