@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../CSS/contact.css">
+  <link rel="stylesheet" href="../CSS/login.css">
   <script src="../JS/javascript.js"></script>
-  <script src="../JS/contact.js"></script>
+  <script src="../JS/login.js"></script>
 </head>
 <body>
   <!-- Menubar -->
@@ -26,8 +26,8 @@
       <a href="./location.html">Location</a>
       <a href="./menu.html">Menu</a>
       <a href="./reservation.html">Reservation</a>
-      <a href="./contact.html" class="active">Contact</a>
-      <a href="./login.html" >Log In</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./login.html" class="active">Log In</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -35,32 +35,23 @@
   </div>
 
   <!-- Contact -->
-  <section class="contact">
-    <div class="contact-container">
-    <h1 class="custom-heading">CONTACT US</h1>
-    <p>Whether you have inquiries about our offerings, want to share feedback, or simply wish to engage in delightful conversations, we're here for you. Feel free to connect with us, and let's make every interaction memorable..</p>
+  <section class="login">
+    <div class="login-container">
+    <h1 class="custom-heading">LOGIN</h1>
 
     <!-- Contact Form -->
-    <form id="contactForm" action="contact.php" method="post">
+    <form id="loginForm" action="login.php" method="post">
       <div class="input-container">
         <div class="input-row">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+          <label for="ID">UserName:</label>
+          <input type="text" id="ID" name="ID" required>
         </div>
         <div class="input-row">
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title" required>
+          <label for="passWord">PassWord:</label>
+          <input type="password" id="passWord" name="title" required>
         </div>
-        <div class="input-row">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="input-row">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required style="height: 150px;"></textarea>
-        </div>
-      </div>
-      <button class="custom-button" type="submit">SEND REQUEST</button>
+        
+      <button class="custom-button" type="submit">Enter</button>
     </form>
     
   </section>
