@@ -18,11 +18,11 @@ if ($conn->connect_error) {
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get username and password from POST data
-    $admin_username = $_POST['ID'];
-    $admin_password = $_POST['title'];
+    $UserName = $_POST['ID'];
+    $Password = $_POST['title'];
 
     // Query the admin table for the provided username , use your table name that you created in database
-    $sql = "SELECT * FROM admin WHERE admin_name='$admin_username'";
+    $sql = "SELECT * FROM admin WHERE UserName='$UserName'";
     $result = $conn->query($sql);
 
     // Debugging statements
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Admin username exists, now check password
         $row = $result->fetch_assoc();
 
-        if ($row['admin_pass'] == $admin_password) {
+        if ($row['Password'] == $Password) {
             // Password matches, admin authenticated, set session variable
             $_SESSION['admin_loggedin'] = true;
             header("Location: admin_dashboard.php"); // Redirect to admin dashboard

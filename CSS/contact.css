@@ -76,7 +76,7 @@ header a:hover {
 .custom-button:hover {
   background-color: #e87800;
 }
-.footer {
+/**.footer {
   background-color: #333;
   color: white;
   text-align: center;
@@ -86,7 +86,7 @@ header a:hover {
   max-width: 100%;
   font-size: 24px;
   margin-top: 25vh;
-}
+}**/
 
 .input-row {
   display: flex;
