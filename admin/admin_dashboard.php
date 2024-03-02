@@ -24,6 +24,11 @@ if (!isset($_SESSION['admin_loggedin'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="../JS/javascript.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
+  
   <!--THIS IS STYLE FOR TABLE-->
   <style>
     table {
@@ -39,34 +44,47 @@ if (!isset($_SESSION['admin_loggedin'])) {
       background-color: #f2f2f2;
     }
     .admin-container {
-    position: relative; /* Set position to relative */
-    display: flex; /* Ensure the child elements are displayed in a row */
-}
-
-.reservation-display, .message-display {
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Adjust as needed */
-    left: 250px; /* Adjust based on the width of the admin panel */
-    height: auto; /* Expand to full height */
-    width: calc(100% - 250px); /* Adjust width to fill remaining space */
-}
+      position: relative; /* Set position to relative */
+      display: flex; /* Ensure the child elements are displayed in a row */
+      height: 100%;
+    }
+    .reservation-display, .message-display {
+      position: absolute; /* Set position to absolute */
+      top: 0; /* Adjust as needed */
+      left: 250px; /* Adjust based on the width of the admin panel */
+      height: auto; /* Expand to full height */
+      width: calc(100% - 250px); /* Adjust width to fill remaining space */
+    }
+  
+    
     .admin-panel {
-        left: 0;
-        width: 250px; /* Adjust width as needed */
-        height: 100vh;
-        background-color: lightgray;
-        padding: 20px;
-        z-index: 1000; /* Ensure it's above other elements */
+    left: 0;
+    width: 250px; /* Adjust width as needed */
+    
+    height:100%;
+    padding: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    overflow-y: auto;
     }
     .admin-panel h3 {
-      margin-top: 0;
-      padding:20px;
+    margin-top: 0;
+    padding:20px;
+    text-align: center;
+    font-weight: bold;
     }
     .admin-panel a {
-      display: block;
-      margin-bottom: 10px;
-      padding:20px;
-      text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    padding:20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  }   
+
+  /* Add custom styling for DataTables */
+  #myTable {
+        width: 100%;
     }
     
   </style>
@@ -77,18 +95,7 @@ if (!isset($_SESSION['admin_loggedin'])) {
 <div class="header">
   <a href="./index.html" class="logo">
     <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
-    <div class="header-right"  id="myTopnav">
-    <a href="./index.html" class="active">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./location.html">Location</a>
-    <a href="./menu.html">Menu</a>
-    <a href="./reservation.html">Reservation</a>
-    <a href="./contact.html">Contact</a>
-    <a href="./login.html">Log out</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+  </a> 
 </div>
 <div class="admin-container">
     <div class="admin-panel" >
@@ -98,17 +105,22 @@ if (!isset($_SESSION['admin_loggedin'])) {
     </div>
 
     <!--Reservation Table -->   
-    <div class="reservation-display" style="display: none;">
-    <table>
+    <div class="reservation-display" section="reservationdisplay" >
+    <table id="myTable">
+      <thead>
         <tr>
+            <th>Reservation_ID</th>
             <th>Name</th>
             <th>Guests</th>
             <th>Date</th>
             <th>Special Request</th>
             <th>Place </th>
+            <th> </th>
+            <th> </th>
         </tr>
+      </thead>
+      <tbody>
         <?php
-
         // Database connection parameters
         $servername = "localhost";
         $username = "root"; // Replace with your MySQL username
@@ -128,34 +140,46 @@ if (!isset($_SESSION['admin_loggedin'])) {
         $result = $conn->query($sql);
               if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
+                    echo "<tr>" ;
+                    echo "<td>" . $row["reservation_id"] . "</td>";
                     echo "<td>" . $row["name"] . "</td>";
                     echo "<td>" . $row["guests"] . "</td>";
                     echo "<td>" . $row["date_time"] . "</td>";
                     echo "<td>" . $row["special_requests"] . "</td>";
                     echo "<td>" . $row["place"] . "</td>";
-                
+                    echo "<td><form method='post' action='delete.php'>
+                          <input type='hidden' name='reservation_id' value='" . $row["reservation_id"] . "'>
+                          <input type='submit' value='Delete'></form></td>";
+                    echo "<td><form method='post' action='edit.php'>
+                          <input type='hidden' name='reservation_id' value='" . $row["reservation_id"] . "'>
+                          <input type='submit' value='Edit'></form></td>";
+                    echo "</tr>";   
                 }
             } else {
                 echo "<tr><td colspan='5'>No reservations found</td></tr>";
             }
 
         ?>
-
+      </tbody>
     </table>
 
     </div>
  
     <!--Message Table -->
     <div class="message-display" style="display: none;">
-        <table>
-        <tr>
+        <table id="myTable2">
+        <thead style="width:100">
+          <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Title</th>
             <th>Message</th>
-        </tr>
-        <?php
+          </tr>
+        </thead>
 
+        <tbody>
+        <?php
         // Database connection parameters
         $servername = "localhost";
         $username = "root"; // Replace with your MySQL username
@@ -176,7 +200,9 @@ if (!isset($_SESSION['admin_loggedin'])) {
               if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
+                    echo "<td>" . $row["id"] . "</td>";
                     echo "<td>" . $row["name"] . "</td>";
+                    echo "<td>" . $row["title"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
                     echo "<td>" . $row["message"] . "</td>";                
                 }
@@ -185,8 +211,8 @@ if (!isset($_SESSION['admin_loggedin'])) {
             }
 
         ?>
-
-        </table>
+        </tbody>
+      </table>
     </div>
 </div>
 
@@ -205,8 +231,19 @@ if (!isset($_SESSION['admin_loggedin'])) {
         element.style.display = 'none';
     }
 }
-
 </script>
 
+ <!-- Include DataTables JavaScript and initialize -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
+ <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+            $('#myTable2').DataTable();
+        });
+    </script>
 </body>
+
+
+
 </html>

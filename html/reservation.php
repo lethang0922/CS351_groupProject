@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root"; // Replace with your MySQL username
 $password = ""; // Replace with your MySQL password
-$database = "CS351_groupProject"; // Replace with your database name
+$database = "cs351_groupproject"; // Replace with your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -29,14 +29,20 @@ $stmt = $conn->prepare($sql);
 // Bind parameters
 $stmt->bind_param("sisss", $name, $guests, $date_time, $special_requests, $place);
 
+// Initialize response array
+//$response = array();
+
 // Execute statement
 if ($stmt->execute()) {
-    echo "Reservation saved successfully!";
+   //echo "Reservation saved successfully!";
+    echo "<script> alert('Saved Successfully'); window.location='reservation.html'</script>";
 } else {
+   // $response['success'] = false;
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 // Close statement and connection
 $stmt->close();
 $conn->close();
+
 ?>
