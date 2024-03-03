@@ -1,3 +1,4 @@
+
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
@@ -56,6 +57,14 @@
 }
 
 @media screen and (max-width: 600px) {
+  .header-right {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Change the direction to column for vertical display */
+    align-items: flex-start; /* Align items to the start of the column */
+    z-index: -1000;
+  }
+ 
   .header-right a:not(:first-child) {display: none;}
   .header-right a.icon {
     float: right;
@@ -72,8 +81,8 @@
   }
   .header-right.responsive a {
     float: none;
-    float:left;
     display: block;
     text-align: left;
   }
+
 }

@@ -83,9 +83,6 @@ if (!isset($_SESSION['admin_loggedin'])) {
   }   
 
   /* Add custom styling for DataTables */
-  #myTable {
-        width: 100%;
-    }
     
   </style>
 </head>
@@ -93,7 +90,7 @@ if (!isset($_SESSION['admin_loggedin'])) {
 <body>
 <!-- Menubar -->
 <div class="header">
-  <a href="./index.html" class="logo">
+  <a href="../html/index.html" class="logo">
     <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
   </a> 
 </div>
@@ -102,6 +99,8 @@ if (!isset($_SESSION['admin_loggedin'])) {
         <h3>Admin Panel</h3>
         <a href="#" onclick="toggleDisplay('reservation-display')">Reservation</a>
         <a href="#" onclick="toggleDisplay('message-display')">Message</a>
+        <a href="../admin/login.html" >Logout</a>
+
     </div>
 
     <!--Reservation Table -->   
@@ -167,8 +166,8 @@ if (!isset($_SESSION['admin_loggedin'])) {
  
     <!--Message Table -->
     <div class="message-display" style="display: none;">
-        <table id="myTable2">
-        <thead style="width:100">
+        <table id="myTable2" >
+        <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
