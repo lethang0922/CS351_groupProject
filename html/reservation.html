@@ -11,9 +11,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,200&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/reservation.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../JS/javascript.js"></script>
-  <script src="../JS/reservation.js"></script>
 </head>
 <body>
 <!-- Menubar -->
@@ -45,7 +42,7 @@
       <div class="input-container">
         <input class="custom-input" type="text" placeholder="Name" required name="Name">
         <input class="custom-input" type="number" placeholder="Number of Guests" required name="Guests" min="1">
-        <input class="custom-input" type="datetime-local" placeholder="Date and Time" required name="date" value="2024-02-03T20:00" min="" step="3600">
+        <input class="custom-input" type="datetime-local" placeholder="Date and Time" required name="date" id="dateTimeInput" min="" step="3600">
         <input class="custom-input" type="text" placeholder="Special Requests" required name="Message">
         <select class="custom-input" name="place" required>
           <option value="" selected disabled hidden>Choose a Place</option>
@@ -55,15 +52,18 @@
           <option value="LynnWood">LynnWood</option>
         </select>
       </div>
-      <button id= "submitButton" class="custom-button" type="submit" >SEND REQUEST</button>
+      <button id= "submitButton" class="custom-button" type="button" onclick="validateReservation()">SEND REQUEST</button>
     </form>
-  
+  </div>
   </section>
   
 <!-- Footer -->
 <div class="footer">
   <p>© 2024 HA'MATATA. STAY CONNECTED</p>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../JS/reservation.js"></script>
 
 </body>
 </html>
