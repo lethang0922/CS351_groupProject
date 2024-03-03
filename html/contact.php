@@ -12,9 +12,7 @@ $conn = new mysqli($servername, $username, $password,
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}else {
-    echo("Good");
-};
+}
 
 // Retrieve form data
 $name = $_POST['name'];
@@ -33,7 +31,8 @@ $stmt->bind_param("ssss", $name, $title, $email, $message);
 
 // Execute statement
 if ($stmt->execute()) {
-    echo "Contact information saved successfully";
+    echo "<script> alert('Contact information saved successfully'); window.location='index.html'</script>";
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

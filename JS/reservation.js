@@ -13,7 +13,7 @@ function validateReservation() {
 
   // Check if the booking time is at least 2 hours from now
   const minimumTime = new Date(now.getTime() + 2 * 60 * 60 * 1000);
-  if (dateTime < minimumTime) {
+  if (dateTime <= now || dateTime < minimumTime) {
     alert("Booking time must be at least 2 hours from now.");
     return;
   }

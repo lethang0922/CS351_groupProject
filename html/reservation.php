@@ -35,7 +35,7 @@ $stmt->bind_param("sisss", $name, $guests, $date_time, $special_requests, $place
 // Execute statement
 if ($stmt->execute()) {
    //echo "Reservation saved successfully!";
-    echo "<script> alert('Saved Successfully'); window.location='reservation.html'</script>";
+    echo "<script> alert('Saved Successfully'); window.location='index.html'</script>";
 } else {
    // $response['success'] = false;
     echo "Error: " . $sql . "<br>" . $conn->error;
