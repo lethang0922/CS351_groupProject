@@ -43,29 +43,25 @@ if (!isset($_SESSION['admin_loggedin'])) {
     th {
       background-color: #f2f2f2;
     }
+   
+    /* Ensure proper layout with flexbox */
     .admin-container {
-      position: relative; /* Set position to relative */
-      display: flex; /* Ensure the child elements are displayed in a row */
-      height: 100%;
+        display: flex;
     }
-    .reservation-display, .message-display {
-      position: absolute; /* Set position to absolute */
-      top: 0; /* Adjust as needed */
-      left: 250px; /* Adjust based on the width of the admin panel */
-      height: auto; /* Expand to full height */
-      width: calc(100% - 250px); /* Adjust width to fill remaining space */
-    }
-  
-    
+
+    /* Adjust admin panel width and position */
     .admin-panel {
-    left: 0;
-    width: 250px; /* Adjust width as needed */
-    
-    height:100%;
-    padding: 20px;
-    z-index: 1000; /* Ensure it's above other elements */
-    overflow-y: auto;
+        width: 250px;
+        padding: 20px;
     }
+
+    /* Adjust reservation display width */
+    .reservation-display, .message-display {
+        flex: 1;
+        padding: 20px;
+    }
+
+  
     .admin-panel h3 {
     margin-top: 0;
     padding:20px;
@@ -83,7 +79,6 @@ if (!isset($_SESSION['admin_loggedin'])) {
   }   
 
   /* Add custom styling for DataTables */
-    
   </style>
 </head>
 
@@ -149,9 +144,9 @@ if (!isset($_SESSION['admin_loggedin'])) {
                     echo "<td><form method='post' action='delete.php'>
                           <input type='hidden' name='reservation_id' value='" . $row["reservation_id"] . "'>
                           <input type='submit' value='Delete'></form></td>";
-                    echo "<td><form method='post' action='edit.php'>
-                          <input type='hidden' name='reservation_id' value='" . $row["reservation_id"] . "'>
-                          <input type='submit' value='Edit'></form></td>";
+                    echo "<td><form method='post' action='edit_form.php'>
+                          <input type='hidden' name='edit_id' value='" . $row["reservation_id"] . "'>
+                          <input type='submit' name ='edit_btn'value='Edit'></form></td>";
                     echo "</tr>";   
                 }
             } else {
@@ -165,9 +160,9 @@ if (!isset($_SESSION['admin_loggedin'])) {
     </div>
  
     <!--Message Table -->
-    <div class="message-display" style="display: none;">
-        <table id="myTable2" >
-        <thead>
+    <div class="message-display" section="messageDisplay"style="display: none; width:100%">
+        <table id="myTable2" style="width:100%" >
+        <thead style="width:100%">
           <tr>
             <th>ID</th>
             <th>Name</th>
@@ -177,7 +172,7 @@ if (!isset($_SESSION['admin_loggedin'])) {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody style="width:100%">
         <?php
         // Database connection parameters
         $servername = "localhost";
