@@ -136,7 +136,7 @@
 
     <div class="edit-form">
     <form method="POST" action="edit.php">
-        <input type="hiddem" name="edit_id" value="<?php echo $row['reservation_id']?>">
+        <input type="hidden" name="edit_id" value="<?php echo $row['reservation_id']?>">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="edit_name" value="<?php echo $row['name']?>"><br>
         <label for="guests">Guests:</label><br>
@@ -147,8 +147,8 @@
         <input type="text" id="special_requests" name="edit_special_requests" value="<?php echo $row['special_requests']?>"><br>
         <label for="place">Place:</label><br>
         <input type="text" id="place" name="edit_place" value="<?php echo $row['place']?>"><br><br>
-        <button type="submit" name="updatebtn">Update </button>
-        <a href="../admin/admin_dashboard.php#reservationdisplay">Cancel</a>
+        <button type="submit" name="updatebtn" style="padding:5px">Update </button>
+        <a href="../admin/admin_dashboard.php#reservationdisplay" style="text-decoration: none;">Cancel</a>
     </form>
     </div>
     <?php
