@@ -1,5 +1,6 @@
 .location-body{
-    padding: 10px;
+    padding-top: 10px;
+    margin:0;
 }
 .location {
     display: flex;

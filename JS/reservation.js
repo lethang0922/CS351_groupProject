@@ -11,10 +11,15 @@ function validateReservation() {
     return;
   }
 
-  // Check if the booking time is at least 2 hours from now
-  const minimumTime = new Date(now.getTime() + 2 * 60 * 60 * 1000);
-  if (dateTime < minimumTime) {
-    alert("Booking time must be at least 2 hours from now.");
+  // Check if the booking time is at least 30 minutes from now
+  const currentDateTime = new Date(now.getTime() + 30 * 60 * 1000); // Add 30 minutes to the current time
+
+  // Set the value of the datetime-local input field to the current time plus 30 minutes
+  document.getElementById("dateTimeInput").value = currentDateTime.toISOString().slice(0, 16); // Format: YYYY-MM-DDTHH:mm
+
+  // Check if the selected time is at least 30 minutes from the current time
+  if (dateTime <= currentDateTime) {
+    alert("Booking time must be at least 30 minutes from now.");
     return;
   }
 
@@ -22,6 +27,7 @@ function validateReservation() {
   alert(`Reservation confirmed for ${name} and ${guests} guests at ${dateTime.toLocaleString()}`);
   form.submit();
 }
+
 
 //press Enter for Send Request button
 $(document).ready(function() {
