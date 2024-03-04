@@ -13,43 +13,35 @@
   <link rel="stylesheet" href="../CSS/menu.css">
   <script src="../JS/javascript.js"></script>
   <script defer src="../JS/menu.js"></script>
-
-  <style>
-
-  </style>
 </head>
-<body>
-    <!-- Menubar -->
-    <div class="header">
-      <a href="./index.html" class="logo">
-        <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
+  <body>
+  <!-- Menubar -->
+  <div class="header">
+    <a href="./index.html" class="logo">
+      <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
+    </a>
+    <div class="header-right" id="myTopnav">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./location.html">Location</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./reservation.html">Reservation</a>
+      <a href="./contact.html" class="active">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
       </a>
-      <div class="header-right" id="myTopnav">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./location.html">Location</a>
-        <a href="./menu.html">Menu</a>
-        <a href="./reservation.html">Reservation</a>
-        <a href="./contact.html" class="active">Contact</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
     </div>
- 
+  </div>
 
-
-    <!-- Menu -->
-    <div class="menu-container">
-        <!-- Appetizers -->
-        <div class="menu-section">
-            <h2>Appetizers</h2>
+  <!-- Menu -->
+  <div class="menu-container">
+    <h2>Appetize</h2>
+    <!-- Sample Menu Item -->
             <div class="menu-item">
-              <div class="menu-item" onclick="addToOrder('Buffalo Wings', 12.00)">
-              <h3>Buffalo Wings ............. $12.00</h3>
-              <p>Spicy chicken wings served with blue cheese dressing.</p>            
-            </div>
-          
+              <h3>Buffalo Wings  ............. $10.50</h3>
+              <p>Spicy chicken wings served with blue cheese dressing.</p>
+            </div>   
+                
             <div class="menu-item">
               <h3>Mozzarella Sticks ............. $9.00</h3>
               <p>Golden-fried mozzarella sticks served with marinara sauce.</p>
@@ -210,13 +202,20 @@
           </div>
           <div id="order-status"></div>
 
-            
-    
-      </div>
-  
+          <button id="orderButton" onclick="viewOrder()">Order now</button>
+
+          <!-- Make order togo cart announcement -->
+          <div id="orderAnnouncements"></div>
+
+          
+          <!-- Thank you message (initially hidden) -->
+          <div id="thankYouMessage" style="display: none;">Thank you for your order!</div>
+          
       <!-- Footer -->
       <div class="footer">
         <p>© 2024 HA'MATATA. STAY CONNECTED</p>
     </div>
-  </body>
+    <script src="../JS/javascript.js"></script>
+    <script defer src="../JS/menu.js"></script>
+</body>
 </html>
