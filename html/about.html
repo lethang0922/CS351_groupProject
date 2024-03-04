@@ -15,23 +15,23 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="header">
-  <a href="./index.html" class="logo">
-    <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
-  </a> 
-      <div class="header-right"  id="myTopnav">
-    <a href="./index.html" >Home</a>
-    <a href="./about.html"class="active">About</a>
-    <a href="./location.html">Location</a>
-    <a href="./menu.html">Menu</a>
-    <a href="./reservation.html">Reservation</a>
-    <a href="./contact.html">Contact</a>
-    <a href="../admin/login.html">Log In</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
+<nav>
+  <a href="./index.html" class="logo"> <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="Company Logo" >
+  </a>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
+    <i class="fa fa-bars"></i>
+  </label>
+  <ul>
+    <li><a class="active" href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./location.html">Locations</a></li>
+    <li><a href="./menu.html">Menu</a></li>
+    <li><a href="./reservation.html">Reservation</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+    <li><a href="../admin/login.html">Login</a></li>
+  </ul>
+</nav>
 <!-- Main content - About Us -->
 <div class="about-us-container">
   <!-- Left side - Information about the restaurant -->

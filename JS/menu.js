@@ -1,41 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll('.menu-item h3');
+  const orderButton = document.getElementById('orderButton');
+  const submitOrderButton = document.getElementById('submitOrderButton');
+  const orderAnnouncements = document.getElementById('orderAnnouncements');
+  const thankYouMessage = document.getElementById('thankYouMessage');
 
-  menuItems.forEach(item => {
-    item.addEventListener('click', function() {
-      const itemName = item.textContent.trim();
-      const itemPrice = getItemPrice(itemName);
-      addToOrder(itemName, itemPrice);
-      confirmOrder(itemName);
+  // Function to handle clicking on h3 items
+  function handleItemClick(itemName) {
+    // Create a new div for the item announcement
+    const itemAnnouncement = document.createElement('div');
+    itemAnnouncement.textContent = itemName;
+
+    // Create a button to remove the item announcement
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'X';
+    removeButton.addEventListener('click', function () {
+      itemAnnouncement.remove();
+      checkSubmitButtonVisibility();
     });
+
+    // Append the item announcement and remove button to the order announcements container
+    orderAnnouncements.appendChild(itemAnnouncement);
+    itemAnnouncement.appendChild(removeButton);
+
+    // Show the thank you message if there are items in the order
+    thankYouMessage.style.display = 'block';
+
+    // Check if the Submit Order button should be visible
+    checkSubmitButtonVisibility();
+  }
+
+  // Function to check if the Submit Order button should be visible
+  function checkSubmitButtonVisibility() {
+    submitOrderButton.style.display = orderAnnouncements.children.length > 0 ? 'block' : 'none';
+  }
+
+  // Attach click event listener to the Order ToGo button
+  orderButton.addEventListener('click', function () {
+    // Display a confirmation message for the order
+    alert("Are you sure you want to place this order?");
   });
 
-  function getItemPrice(itemName) {
-    const itemPrices = {
-      'Buffalo Wings': 12.00,
-      'Mozzarella Sticks': 9.00,
-      // Add more items and prices as needed
-    };
-
-    return itemPrices[itemName] || 0.00;
-  }
-
-  function addToOrder(itemName, itemPrice) {
-    let order = JSON.parse(localStorage.getItem('order')) || [];
-
-    order.push({ name: itemName, price: itemPrice });
-    localStorage.setItem('order', JSON.stringify(order));
-  }
-
-  function confirmOrder(itemName) {
-    const confirmation = confirm(`Added ${itemName} to your order. Do you want to order now?`);
-    
-    if (confirmation) {
-      // Redirect to the order page or perform any other action
-      // You can implement this based on your application structure
-      alert('Order now'); // Placeholder alert
-    } else {
-      alert('Think again!');
+  // Attach click event listeners to all h3 elements
+  const h3Elements = document.querySelectorAll('.menu-item h3');
+  h3Elements.forEach(function (h3) {
+    // Check if an event listener is already attached to the element
+    if (!h3.hasAttribute('data-clicked')) {
+      h3.setAttribute('data-clicked', 'true');
+      h3.addEventListener('click', function () {
+        const itemName = h3.textContent.trim();
+        // Handle the item click
+        handleItemClick(itemName);
+      });
     }
-  }
+  });
 });
