@@ -84,9 +84,9 @@ if (!isset($_SESSION['admin_loggedin'])) {
 
 <body>
 <!-- Menubar -->
-<div class="header">
+<div class="header" style="background-color: #646363;">
   <a href="../html/index.html" class="logo">
-    <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo">
+    <img src="../images/HaMatata Logo - White with Black Background - 5000x5000.png" alt="CompanyLogo" style="padding:5px">
   </a> 
 </div>
 <div class="admin-container">

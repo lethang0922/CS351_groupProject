@@ -21,6 +21,8 @@
   text-align: center;
   color: white;
   z-index: 0;
+  background-size: 100% auto; /* Ensure the image covers the width of the screen */
+
 }
 
 .first-block::before {
